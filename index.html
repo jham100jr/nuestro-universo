@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Para Andrea ✨ Nuestro Universo de Amor</title>
+  <meta name="description" content="Una experiencia cósmica creada con todo el amor del mundo especialmente para Andrea.">
+  
+  <!-- Favicon de corazón -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%22100%22%20height=%22100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+
+  <!-- Fuentes de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Sacramento&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Fondo de Canvas Cósmico (Estrellas, Nebulosa y Partículas interactivas) -->
+  <canvas id="galaxy-canvas"></canvas>
+
+  <!-- Brillos flotantes estelares -->
+  <div class="stardust-overlay" id="stardust"></div>
+
+  <!-- Barra de Navegación Cósmica Flotante -->
+  <nav class="cosmic-nav" id="cosmic-nav">
+    <div class="nav-logo">
+      <i class="fa-solid fa-sparkles"></i> Andrea &amp; Yo
+    </div>
+    <div class="nav-links">
+      <a href="#hero" class="nav-link active"><i class="fa-solid fa-home"></i> <span>Inicio</span></a>
+      <a href="#timer-section" class="nav-link"><i class="fa-solid fa-clock"></i> <span>Tiempo</span></a>
+      <a href="#timeline-section" class="nav-link"><i class="fa-solid fa-route"></i> <span>Historia</span></a>
+      <a href="#polaroids-section" class="nav-link"><i class="fa-solid fa-images"></i> <span>Recuerdos</span></a>
+      <a href="#jar-section" class="nav-link"><i class="fa-solid fa-jar"></i> <span>Razones</span></a>
+      <a href="#quiz-section" class="nav-link"><i class="fa-solid fa-gamepad"></i> <span>Trivia</span></a>
+      <a href="#letter-section" class="nav-link"><i class="fa-solid fa-envelope-open-text"></i> <span>Carta</span></a>
+    </div>
+  </nav>
+
+  <!-- Reproductor de Música Cósmico Flotante -->
+  <div class="music-player-widget" id="music-widget">
+    <div class="vinyl-disc-container">
+      <div class="vinyl-disc" id="vinyl-disc">
+        <div class="vinyl-core">
+          <i class="fa-solid fa-heart vinyl-heart"></i>
+        </div>
+      </div>
+    </div>
+    <div class="music-info">
+      <div class="music-title" id="music-title">Nuestra Canción Mágica</div>
+      <div class="music-subtitle" id="music-subtitle" role="status" aria-live="polite">Carga tu canción desde el botón de la nube</div>
+      <div class="music-controls">
+        <button id="btn-play-pause" class="btn-music-action" title="Reproducir / Pausar">
+          <i class="fa-solid fa-play" id="play-icon"></i>
+        </button>
+        <button id="btn-sound-mode" class="btn-music-action" title="Silenciar música" aria-label="Silenciar música">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+        <label for="custom-audio-upload" class="btn-music-action custom-upload-btn" title="Cargar tu propia canción (MP3)">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <input type="file" id="custom-audio-upload" accept="audio/*" style="display:none;">
+        </label>
+      </div>
+    </div>
+    <!-- Elemento Audio Opcional para archivos del usuario -->
+    <audio id="audio-element" preload="auto"></audio>
+  </div>
+
+  <!-- SECCIÓN 1: HERO / PORTADA CINEMÁTICA -->
+  <section class="section hero-section" id="hero">
+    <div class="hero-content">
+      <div class="glowing-badge">
+        <i class="fa-solid fa-star star-twinkle"></i> Para la mujer más hermosa del cosmos
+      </div>
+      <h1 class="hero-title">
+        Andrea
+        <span class="hero-title-sub">Eres mi universo entero</span>
+      </h1>
+      <p class="hero-description">
+        Entre miles de millones de galaxias, en este rincón del espacio y del tiempo,
+        mi mayor bendición siempre será haber coincidido contigo.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#timer-section" class="btn-cosmic btn-glow">
+          <span>Explorar Nuestro Universo</span>
+          <i class="fa-solid fa-arrow-down"></i>
+        </a>
+        <button class="btn-cosmic btn-outline" id="btn-surprise-intro">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Pedir un Deseo</span>
+        </button>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <span>Desliza para viajar en el tiempo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: CONTADOR CÓSMICO DE TIEMPO JUNTOS -->
+  <section class="section timer-section" id="timer-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-label"><i class="fa-solid fa-meteor"></i> Cada Segundo Contigo Es Oro</span>
+        <h2 class="section-title">El Tiempo a Tu Lado</h2>
+        <p class="section-subtitle">
+          El tiempo no se mide en minutos ni en horas... se mide en todos los latidos y sonrisas que hemos compartido.
+        </p>
+      </div>
+
+      <!-- Cuadros del Reloj Cósmico -->
+      <div class="countdown-grid" id="timer-grid">
+        <div class="timer-card">
+          <div class="timer-glass">
+            <span class="timer-num" id="years-val">00</span>
+            <span class="timer-unit">Años</span>
+          </div>
+        </div>
+        <div class="timer-card">
+          <div class="timer-glass">
+            <span class="timer-num" id="months-val">00</span>
+            <span class="timer-unit">Meses</span>
+          </div>
+        </div>
+        <div class="timer-card">
+          <div class="timer-glass">
+            <span class="timer-num" id="days-val">00</span>
+            <span class="timer-unit">Días</span>
+          </div>
+        </div>
+        <div class="timer-card">
+          <div class="timer-glass">
+            <span class="timer-num" id="hours-val">00</span>
+            <span class="timer-unit">Horas</span>
+          </div>
+        </div>
+        <div class="timer-card">
+          <div class="timer-glass">
+            <span class="timer-num" id="minutes-val">00</span>
+            <span class="timer-unit">Minutos</span>
+          </div>
+        </div>
+        <div class="timer-card highlight-seconds">
+          <div class="timer-glass">
+            <span class="timer-num" id="seconds-val">00</span>
+            <span class="timer-unit">Segundos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Total acumulado poético -->
+      <div class="total-stats-pill">
+        <i class="fa-solid fa-heart-pulse heartbeat"></i>
+        <span id="total-days-phrase">Llevamos más de <strong>0 días</strong> escribiendo nuestra historia juntos.</span>
+      </div>
+
+      <!-- Botón para ajustar fecha si el usuario lo desea fácilmente -->
+      <div class="custom-date-toggle-wrap">
+        <button id="btn-toggle-date-picker" class="btn-text-subtle">
+          <i class="fa-solid fa-calendar-heart"></i> ¿Quieres personalizar la fecha de inicio?
+        </button>
+        <div id="date-picker-box" class="date-picker-box hidden">
+          <label for="custom-start-date">Selecciona la fecha exacta en que comenzó nuestra historia:</label>
+          <div class="date-input-group">
+            <input type="date" id="custom-start-date" value="2023-02-14">
+            <button id="btn-save-date" class="btn-cosmic btn-sm">Guardar Fecha</button>
+          </div>
+          <small>Se guardará automáticamente en este dispositivo.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: LÍNEA DE TIEMPO CÓSMICA ("NUESTRA HISTORIA") -->
+  <section class="section timeline-section" id="timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-label"><i class="fa-solid fa-satellite"></i> Constelación de Momentos</span>
+        <h2 class="section-title">Nuestra Historia de Amor</h2>
+        <p class="section-subtitle">
+          Cada momento a tu lado ha sido una estrella que encendió mi cielo.
+        </p>
+      </div>
+
+      <div class="cosmic-timeline" id="timeline-container">
+        <!-- Evento 1 -->
+        <div class="timeline-item left">
+          <div class="timeline-dot">
+            <i class="fa-solid fa-sparkle"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-date"><i class="fa-regular fa-calendar"></i> El Primer Encuentro</div>
+            <h3 class="timeline-card-title">Cuando el destino nos cruzó</h3>
+            <p class="timeline-card-desc">
+              Ese día no tenía idea de que estaba a punto de conocer a la persona que le daría color, paz y magia a mi vida. Una mirada tuya bastó para saber que serías inolvidable.
+            </p>
+            <div class="timeline-tag">✨ El inicio de todo</div>
+          </div>
+        </div>
+
+        <!-- Evento 2 -->
+        <div class="timeline-item right">
+          <div class="timeline-dot">
+            <i class="fa-solid fa-coffee"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-date"><i class="fa-regular fa-calendar"></i> Nuestra Primera Cita</div>
+            <h3 class="timeline-card-title">Risas que detuvieron el reloj</h3>
+            <p class="timeline-card-desc">
+              Los nervios del principio se convirtieron en horas de plática infinita. Me di cuenta de que tu risa se convertiría en mi sonido favorito de todo el planeta.
+            </p>
+            <div class="timeline-tag">☕ Horas como segundos</div>
+          </div>
+        </div>
+
+        <!-- Evento 3 -->
+        <div class="timeline-item left">
+          <div class="timeline-dot">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-date"><i class="fa-regular fa-calendar"></i> El Primer Beso</div>
+            <h3 class="timeline-card-title">Fuegos artificiales en el pecho</h3>
+            <p class="timeline-card-desc">
+              Todo alrededor se silenció. El mundo se detuvo por completo y supe, con toda certeza, que ningún lugar se sentía tan cálido como estar entre tus brazos.
+            </p>
+            <div class="timeline-tag">💋 Inolvidable</div>
+          </div>
+        </div>
+
+        <!-- Evento 4 -->
+        <div class="timeline-item right">
+          <div class="timeline-dot">
+            <i class="fa-solid fa-infinity"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-date"><i class="fa-regular fa-calendar"></i> Hoy y Para Siempre</div>
+            <h3 class="timeline-card-title">Construyendo nuestro futuro</h3>
+            <p class="timeline-card-desc">
+              Cada día contigo me confirma que elegirte es la decisión más hermosa y fácil de mi vida. Gracias por ser mi cómplice, mi refugio y mi mayor amor.
+            </p>
+            <div class="timeline-tag">🚀 Hacia el infinito</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: GALERÍA POLAROID 3D INTERACTIVA -->
+  <section class="section polaroids-section" id="polaroids-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-label"><i class="fa-solid fa-camera-retro"></i> Recuerdos Inolvidables</span>
+        <h2 class="section-title">Nuestras Memorias Favoritas</h2>
+        <p class="section-subtitle">
+          Pasa el cursor o toca cada foto para darle la vuelta y descubrir el mensaje secreto que guarda detrás.
+        </p>
+      </div>
+
+      <div class="polaroid-grid" id="polaroid-gallery">
+        <!-- Polaroid 1 -->
+        <div class="polaroid-wrapper" data-tilt>
+          <div class="polaroid-card">
+            <div class="polaroid-front">
+              <div class="pin"></div>
+              <div class="photo-container">
+                <div class="photo-placeholder photo-bg-1">
+                  <i class="fa-solid fa-heart photo-icon"></i>
+                  <span>Tu Sonrisa Radiante</span>
+                </div>
+              </div>
+              <div class="polaroid-caption">Tu luz ilumina cualquier día gris ☀️</div>
+            </div>
+            <div class="polaroid-back">
+              <div class="tape"></div>
+              <h4>Para ti, mi amor</h4>
+              <p>Tienes la sonrisa más genuina y hermosa del mundo. Cada vez que sonríes, todo a mi alrededor se llena de paz.</p>
+              <div class="back-footer">💖 Siempre tú</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Polaroid 2 -->
+        <div class="polaroid-wrapper" data-tilt>
+          <div class="polaroid-card">
+            <div class="polaroid-front">
+              <div class="pin"></div>
+              <div class="photo-container">
+                <div class="photo-placeholder photo-bg-2">
+                  <i class="fa-solid fa-sun photo-icon"></i>
+                  <span>Nuestras Aventuras</span>
+                </div>
+              </div>
+              <div class="polaroid-caption">Cualquier lugar contigo es mi hogar 🌍</div>
+            </div>
+            <div class="polaroid-back">
+              <div class="tape"></div>
+              <h4>Mi cómplice perfecta</h4>
+              <p>No importa si salimos a un lugar lejano o nos quedamos viendo una película: a tu lado cualquier instante ordinario se vuelve una aventura épica.</p>
+              <div class="back-footer">✈️ Mi destino favorito</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Polaroid 3 -->
+        <div class="polaroid-wrapper" data-tilt>
+          <div class="polaroid-card">
+            <div class="polaroid-front">
+              <div class="pin"></div>
+              <div class="photo-container">
+                <div class="photo-placeholder photo-bg-3">
+                  <i class="fa-solid fa-moon photo-icon"></i>
+                  <span>Noches de Conversación</span>
+                </div>
+              </div>
+              <div class="polaroid-caption">Contigo el tiempo no existe ✨</div>
+            </div>
+            <div class="polaroid-back">
+              <div class="tape"></div>
+              <h4>Esas pláticas infinitas</h4>
+              <p>Amo cómo podemos hablar de las tonterías más absurdas y un minuto después filosofar sobre la vida y nuestros sueños. Eres mi persona.</p>
+              <div class="back-footer">🌙 Hasta la luna</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Polaroid 4 -->
+        <div class="polaroid-wrapper" data-tilt>
+          <div class="polaroid-card">
+            <div class="polaroid-front">
+              <div class="pin"></div>
+              <div class="photo-container">
+                <div class="photo-placeholder photo-bg-4">
+                  <i class="fa-solid fa-hand-holding-heart photo-icon"></i>
+                  <span>En Las Buenas y Malas</span>
+                </div>
+              </div>
+              <div class="polaroid-caption">Mi refugio más seguro 🛡️</div>
+            </div>
+            <div class="polaroid-back">
+              <div class="tape"></div>
+              <h4>Incondicional</h4>
+              <p>Gracias por tu paciencia, tu ternura y por cómo me miras. Prometo cuidar tu corazón y estar a tu lado en cada paso del camino.</p>
+              <div class="back-footer">🤝 Mano con mano</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón para que el usuario agregue/cargue fotos reales con preview -->
+      <div class="polaroid-upload-section">
+        <p class="photo-hint">
+          <i class="fa-solid fa-circle-info"></i> Puedes reemplazar estas fotos con fotos reales de ustedes dos cuando quieras:
+        </p>
+        <label for="user-photo-upload" class="btn-cosmic btn-sm">
+          <i class="fa-solid fa-upload"></i> Cargar fotos reales desde tu equipo
+          <input type="file" id="user-photo-upload" accept="image/*" multiple style="display:none;">
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: EL FRASCO MÁGICO DE 'RAZONES POR LAS QUE TE AMO' -->
+  <section class="section jar-section" id="jar-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-label"><i class="fa-solid fa-star-and-crescent"></i> Infinitas como el universo</span>
+        <h2 class="section-title">El Frasco de las Razones</h2>
+        <p class="section-subtitle">
+          Toca el frasco de cristal para liberar una estrella luminosa con una razón por la que te amo con locura.
+        </p>
+      </div>
+
+      <div class="magic-jar-wrapper">
+        <div class="jar-interactive-container" id="jar-trigger">
+          <div class="cosmic-jar">
+            <div class="jar-lid"></div>
+            <div class="jar-body">
+              <div class="jar-glow"></div>
+              <!-- Estrellas flotantes dentro del frasco -->
+              <div class="jar-stars">
+                <span class="inner-star s1">✨</span>
+                <span class="inner-star s2">⭐</span>
+                <span class="inner-star s3">💫</span>
+                <span class="inner-star s4">✨</span>
+                <span class="inner-star s5">⭐</span>
+              </div>
+              <div class="jar-label">
+                <i class="fa-solid fa-heart"></i>
+                <span>Tócame, Andrea</span>
+              </div>
+            </div>
+          </div>
+          <div class="jar-pulse-ring"></div>
+        </div>
+
+        <!-- Tarjeta de la Razón Revelada -->
+        <div class="reason-display-card" id="reason-card">
+          <div class="reason-header">
+            <span class="reason-number" id="reason-count-tag">Razón Especial</span>
+            <div class="reason-sparkles">✨💖✨</div>
+          </div>
+          <p class="reason-text" id="reason-text">
+            "Haz clic en el frasco para descubrir por qué cada día a tu lado es una razón para dar gracias..."
+          </p>
+          <div class="reason-counter-footer">
+            <span id="reasons-discovered-counter">Has desbloqueado <strong id="discovered-num">1</strong> de muchas razones</span>
+            <button id="btn-next-reason" class="btn-cosmic btn-sm">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Otra estrella
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 6: TRIVIA / MINI-JUEGO DE PAREJA -->
+  <section class="section quiz-section" id="quiz-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-label"><i class="fa-solid fa-gamepad"></i> ¿Qué tanto nos conocemos?</span>
+        <h2 class="section-title">El Test de Nuestro Amor</h2>
+        <p class="section-subtitle">
+          Demuestra tus superpoderes de novia en este mini-juego interactivo. ¡Hay una sorpresa al terminar!
+        </p>
+      </div>
+
+      <div class="quiz-card-container">
+        <div class="quiz-box" id="quiz-box">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quiz-progress"></div>
+          </div>
+
+          <div class="quiz-question-header">
+            <span class="question-number" id="quiz-step-indicator">Pregunta 1 de 4</span>
+            <h3 class="question-title" id="quiz-question-title">¿Quién de los dos se enamoró primero?</h3>
+          </div>
+
+          <div class="quiz-options-grid" id="quiz-options-container">
+            <!-- Las opciones se renderizan dinámicamente con JS -->
+          </div>
+
+          <div class="quiz-feedback-box hidden" id="quiz-feedback">
+            <p id="quiz-feedback-text"></p>
+            <button id="btn-quiz-next" class="btn-cosmic btn-sm">Siguiente Pregunta <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Pantalla de Victoria / Final del Quiz -->
+        <div class="quiz-victory-screen hidden" id="quiz-victory">
+          <div class="victory-trophy">
+            <i class="fa-solid fa-crown victory-crown"></i>
+            <i class="fa-solid fa-award trophy-icon"></i>
+          </div>
+          <h3 class="victory-title">¡100% Amor Confirmado! 💖</h3>
+          <p class="victory-desc">
+            Eres oficialmente la mejor novia del universo entero. Tu premio es un millón de besos, abrazos infinitos y un vale canjeable por la cita que tú elijas.
+          </p>
+          <div class="victory-coupon">
+            <div class="coupon-border">
+              <span class="coupon-badge">VALE OFICIAL DE AMOR</span>
+              <h4>Válido por: Lo que se le antoje a Andrea</h4>
+              <p>Sin fecha de vencimiento • Válido para toda la vida</p>
+            </div>
+          </div>
+          <button id="btn-quiz-restart" class="btn-cosmic btn-outline btn-sm">
+            <i class="fa-solid fa-rotate-left"></i> Jugar de nuevo
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 7: LA CARTA ESTELAR EN 3D (SOBRE Y SELLO) -->
+  <section class="section letter-section" id="letter-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-label"><i class="fa-solid fa-heart-circle-bolt"></i> Desde lo más profundo de mi ser</span>
+        <h2 class="section-title">Una Carta Para Mi Niña Hermosa</h2>
+        <p class="section-subtitle">
+          Toca el sello de cera para romperlo, abrir el sobre y leer lo que guarda mi corazón.
+        </p>
+      </div>
+
+      <div class="envelope-area">
+        <!-- Sobre 3D -->
+        <div class="envelope-wrapper" id="envelope-wrapper">
+          <div class="envelope" id="envelope">
+            <div class="envelope-flap" id="envelope-flap"></div>
+            <div class="envelope-pocket"></div>
+            <!-- Sello de Cera -->
+            <button type="button" class="wax-seal" id="wax-seal" title="Haz clic para romper el sello" aria-label="Abrir la carta" aria-expanded="false">
+              <div class="seal-inner">
+                <i class="fa-solid fa-heart"></i>
+                <span>A &amp; M</span>
+              </div>
+            </button>
+            <!-- Carta que emerge -->
+            <div class="letter-paper" id="letter-paper">
+              <div class="letter-inner-content">
+                <div class="letter-date" id="letter-date-display">Bajo un cielo de estrellas</div>
+                <h3 class="letter-salutation">Mi amada Andrea,</h3>
+                <div class="letter-body">
+                  <p>
+                    Si tuviera que elegir un solo instante para revivir mil veces, elegiría el momento en que entraste a mi vida. No hay palabras en ningún idioma que alcancen a describir todo lo que provocas en mí.
+                  </p>
+                  <p>
+                    Amo tu forma de ser, tu mirada tierna, la paz inmensa que me das cuando me abrazas, y la forma tan única en la que me haces sentir amado y valorado. Eres mi refugio, mi mayor alegría y la persona con la que quiero soñar, reír, superar cualquier obstáculo y construirlo todo.
+                  </p>
+                  <p>
+                    No importa cuántas estrellas existan en el universo: ninguna brilla con tanta fuerza ni tanta belleza como tus ojos cuando sonríes.
+                  </p>
+                  <p class="letter-closing">
+                    Gracias por ser tú. Gracias por elegirme cada día.<br>
+                    <strong>Te amo con todo mi corazón, hoy, mañana y siempre.</strong>
+                  </p>
+                </div>
+                <div class="letter-signature">
+                  Tu novio, quien te ama infinitamente ❤️
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón de apertura rápida en móvil -->
+        <div class="envelope-hint">
+          <button id="btn-toggle-letter" class="btn-cosmic btn-glow">
+            <i class="fa-solid fa-envelope-open"></i> <span id="letter-btn-text">Abrir Carta de Amor</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 8: GRAN FINAL Y SUPERNOVA DE AMOR -->
+  <footer class="cosmic-footer">
+    <div class="footer-content">
+      <button type="button" class="final-heart-pulsar" id="final-heart-btn" title="Haz clic para una explosión de amor" aria-label="Crear una explosión de amor">
+        <i class="fa-solid fa-heart"></i>
+      </button>
+      <h3 class="footer-title">¿Sabes qué es lo mejor de todo esto?</h3>
+      <p class="footer-sub">Que esto apenas es el comienzo de nuestra gran historia juntos.</p>
+      
+      <div class="final-action-zone">
+        <button id="btn-supernova" class="btn-cosmic btn-glow btn-lg">
+          <i class="fa-solid fa-meteor"></i> ¡Toca aquí para una explosión estelar!
+        </button>
+      </div>
+
+      <div class="footer-dedication">
+        Hecho con amor eterno por quien daría la vida por hacerte sonreír • Para Andrea ✨
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Emergente de Deseo Estelar -->
+  <div class="modal-overlay hidden" id="wish-modal">
+    <div class="modal-card">
+      <button class="modal-close" id="btn-close-wish">&times;</button>
+      <div class="modal-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+      <h3 class="modal-title">Pide un Deseo Estelar, Andrea ✨</h3>
+      <p class="modal-desc">
+        Cierra los ojos, piensa en algo hermoso que desees para nosotros o para ti, y pulsa el botón. El universo ya está conspirando a nuestro favor.
+      </p>
+      <div class="wish-input-wrap">
+        <input type="text" id="wish-input" placeholder="Escribe tu deseo aquí (o guárdalo en tu corazón)...">
+      </div>
+      <button id="btn-send-wish" class="btn-cosmic btn-glow">
+        <i class="fa-solid fa-paper-plane"></i> Enviar Deseo a las Estrellas
+      </button>
+      <div class="wish-confirmation hidden" id="wish-confirmed">
+        💖 ¡Tu deseo ha sido sellado en el firmamento! Prometo hacer todo lo posible por cumplirlo a tu lado.
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor para fuegos artificiales y confeti cósmico -->
+  <div id="confetti-container" class="confetti-container"></div>
+
+  <!-- Scripts -->
+  <script src="datos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
